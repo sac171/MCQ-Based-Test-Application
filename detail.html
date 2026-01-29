@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RS Classes Quiz - User Details</title>
+  <link rel="stylesheet" href="detail.css">
+</head>
+
+<body>
+
+<header class="main-header">
+  <h2>RS Classes - Quiz Application</h2>
+</header>
+
+<section class="details-container">
+  <h1 class="main-title">RS Classes Quiz</h1>
+  <p class="intro-text">Enter your details to start:</p>
+
+  <!-- 🔴 ID ADDED HERE -->
+  <form class="details-form" id="detailsForm">
+
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <div class="row">
+      <div class="input-group">
+        <input type="text" id="class" placeholder="Class">
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="roll" placeholder="Roll No">
+      </div>
+    </div>
+
+    <button type="submit" class="start-btn">Start QUIZ ▶</button>
+
+    <div class="action-btns">
+      <button type="reset" class="clear-btn">CLEAR</button>
+    </div>
+
+  </form>
+</section>
+
+<script>
+
+
+  const form = document.getElementById("detailsForm");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const userClass = document.getElementById("class").value.trim();
+  const roll = document.getElementById("roll").value.trim();
+
+  // NAME VALIDATION
+  if (name === "") {
+    alert("❌ Name cannot be empty");
+    return;
+  }
+  if (!/^[A-Za-z ]+$/.test(name)) {
+    alert("❌ Name should contain only alphabets.");
+    return;
+  }
+  if (name.length < 3) {
+    alert("❌ Name must contain at least 3 characters.");
+    return;
+  }
+
+  // CLASS VALIDATION
+  if (userClass === "") {
+    alert("❌ Class cannot be empty");
+    return;
+  }
+  if (!/^[0-9]+$/.test(userClass)) {
+    alert("❌ Class must contain only numbers.");
+    return;
+  }
+  if (Number(userClass) < 1 || Number(userClass) > 12) {
+    alert("❌ Class must be between 1 to 12 only.");
+    return;
+  }
+
+  // ROLL VALIDATION
+ if (roll === "") {
+  alert("❌ Roll number cannot be empty");
+  return;
+}
+if (!/^[1-9][0-9]*$/.test(roll)) {
+  alert("❌ Roll number must contain only digits and cannot start with 0.");
+  return;
+}
+if (roll.length > 4) {
+  alert("❌ Roll number cannot be more than 4 digits.");
+  return;
+}
+
+
+  // SAVE DATA
+  localStorage.setItem("username", name);
+  localStorage.setItem("class", userClass);
+  localStorage.setItem("roll", roll);
+
+  // GO TO QUIZ PAGE
+  window.location.href = "question.html";
+});
+
+</script>
+</body>
+</html>

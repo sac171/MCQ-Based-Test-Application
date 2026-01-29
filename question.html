@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS Classes Quiz - Question</title>
+    <link rel="stylesheet" href="question.css">
+</head>
+<body>
+<!-- 
+    <header class="main-header">
+        <h2>RS Classes - Quiz</h2>
+    </header> -->
+
+    <section class="quiz-container">
+        <div class="quiz-header">
+            <span id="question-number" class="question-number">Q1/10</span>
+            <span class="timer" id="time"> Timer: 1:40</span>
+        </div>
+
+        <div class="question-box">
+            <p class="question-text" id="questiontext"></p>
+
+            <div class="options" id="optioncontainer">
+                <label class="option">
+                    <input type="radio" name="quiz-option" value="Mercury">
+                 
+                </label>
+                <label class="option">
+                    <input type="radio" name="quiz-option" value="Venus">
+                   
+                </label>
+                <label class="option">
+                    <input type="radio" name="quiz-option" value="Earth">
+                   
+                </label>
+                <label class="option">
+                    <input type="radio" name="quiz-option" value="Mars">
+                    
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-actions">
+            <button onclick="nextQuestion()" id="next-btn">SKIP</button>
+            <button onclick="submitAnswer()"id="submit-btn">SUBMIT</button>
+        </div>
+    </section>
+
+
+    <div class="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background: #fff9d6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.main-header{
+    width: 100%;
+    padding: 18px;
+    background: #1d4ed8;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+
+    
+    font-family: "Playwrite NO", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+.quiz-container{
+    width: 500px;
+    background: white;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    /* margin-top: 30px; */
+    border:2px solid black;
+}
+
+.quiz-header{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d4ed8;
+    margin-bottom: 15px;
+}
+
+.question-box{
+    margin-bottom: 20px;
+}
+
+.question-text{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 2px solid #1d4ed8;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    background: #fff;
+}
+
+.option input[type="radio"]{
+    accent-color: #1d4ed8;
+    cursor: pointer;
+}
+
+.option:hover{
+    background: #f7f2f2;
+    
+}
+
+.option.selected{
+    background: #f59e0b;
+    color: white;
+    border-color: #f59e0b;
+}
+
+.quiz-actions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.quiz-actions button{
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    border:2px solid black;
+}
+
+#next-btn{
+    background: #10b981;
+    color: white;
+}
+
+#next-btn:hover{
+    background: #059669;
+}
+
+#submit-btn{
+    background: #ef4444;
+    color: white;
+}
+
+#submit-btn:hover{
+    background: #b91c1c;
+}
+
+
+.result {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .dashboard {
+    width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    animation: popUp 0.8s ease;
+  }
+  
+  .dashboard-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  
+  .score-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
+  .stat-card {
+    width: 30%;
+    padding: 12px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-6px);
+  }
+  
+  .correct {
+    background: linear-gradient(135deg, #00b09b, #96c93d);
+  }
+  
+  .wrong {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  }
+  
+  .total {
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+  }
+  
+  .stat-card h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+  
+  .stat-card p {
+    margin: 5px 0 0;
+    font-size: 14px;
+  }
+  
+  .restart-btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    color: #000;
+    transition: all 0.3s ease;
+  }
+  
+  .restart-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  }
+  
+  @keyframes popUp {
+    from {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
